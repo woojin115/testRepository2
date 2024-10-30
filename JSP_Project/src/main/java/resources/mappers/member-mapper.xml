@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	
+	<!-- 로그인 구문 -->
+	<entry key="loginMember">
+		SELECT *
+		FROM MEMBER
+		WHERE USER_ID = ?
+		AND USER_PWD = ?
+		AND STATUS ='Y'
+	</entry>
+	
+	<!-- 회원 가입 구문 -->
+	<entry key="insertMember">
+		INSERT INTO MEMBER( USER_NO
+		                   ,USER_ID
+		                   ,USER_PWD
+		                   ,USER_NAME
+		                   ,PHONE
+		                   ,EMAIL
+		                   ,ADDRESS
+		                   ,INTEREST) 
+		VALUES (SEQ_UNO.NEXTVAL,?,?,?,?,?,?,?)
+	</entry>
+	
+	<!-- 회원 정보 수정 구문 -->
+	<entry key="updateMember">
+		UPDATE MEMBER
+		SET USER_NAME = ?
+		   ,PHONE = ?
+		   ,EMAIL = ?
+		   ,ADDRESS = ?
+		   ,INTEREST = ?
+		   ,MODIFY_DATE = SYSDATE
+		WHERE USER_ID = ?
+	</entry>
+	
+	<!-- 비밀번호 수정 구문 -->
+	<entry key="updatePwd">
+		UPDATE MEMBER
+		SET USER_PWD = ?
+		   ,MODIFY_DATE = SYSDATE
+		WHERE USER_ID = ?
+		AND USER_PWD = ?
+	</entry>
+	
+	<!-- 회원 탈퇴 구문 -->
+	<entry key = "deleteMember">
+		UPDATE MEMBER
+		SET STATUS = 'N'
+		   ,MODIFY_DATE = SYSDATE
+		WHERE USER_ID = ?
+		AND USER_PWD = ?
+	</entry>
+	
+	<!-- 아이디 중복확인 구문 -->
+	<entry key="idCheck">
+		SELECT USER_ID 
+		FROM MEMBER 
+		WHERE USER_ID = ?
+	</entry>
+	
+
+</properties>

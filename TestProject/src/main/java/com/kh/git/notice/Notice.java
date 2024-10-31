@@ -1,37 +1,36 @@
 package com.kh.git.notice;
 
-import java.util.Objects;
 
 public class Notice {
+
 	private String no;
-	private String title;
+	private String gender;
+	private int age;
+	public Notice() {
+		super();
+	}
+	public Notice(String no, String gender, int age) {
+		super();
+		this.no = no;
+		this.gender = gender;
+		this.age = age;
+	}
 	public String getNo() {
 		return no;
 	}
 	public void setNo(String no) {
 		this.no = no;
 	}
-	public String getTitle() {
-		return title;
+	public String getGender() {
+		return gender;
 	}
-	public void setTitle(String title) {
-		this.title = title;
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
-	@Override
-	public int hashCode() {
-		return Objects.hash(no, title);
+	public int getAge() {
+		return age;
 	}
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Notice other = (Notice) obj;
-		return Objects.equals(no, other.no) && Objects.equals(title, other.title);
+	public void setAge(int age) {
+		this.age = age;
 	}
-	
-	
 }

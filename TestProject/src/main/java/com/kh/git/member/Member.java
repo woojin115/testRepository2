@@ -4,4 +4,6 @@ public class Member {
 	String user;
 	
 	int age;
+	
+	String gender;
 }

@@ -1,5 +1,6 @@
 package com.kh.git.notice;
 
+
 public class Notice {
 
 	private String no;
@@ -32,6 +33,4 @@ public class Notice {
 	public void setAge(int age) {
 		this.age = age;
 	}
-	
-
 }
